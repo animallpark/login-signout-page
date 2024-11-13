@@ -26,6 +26,10 @@ const userSchema = new mongoose.Schema({
 
 const userModel = mongoose.model("users", userSchema)
 
+app.get('/', (req, res) => {
+  res.send("hello world")
+
+})
 app.post('/signup', (req, res) => {
   userModel.create(req.body)
     .then(users => res.json(users))
